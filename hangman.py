@@ -6,7 +6,14 @@ import random
 import os
 
 # decides phrase 
-phrase_list = ['hangman', 'robot', 'color']
+f_words = open("words.txt", "r")
+phrase_list = []
+line = f_words.readline()
+while line:
+   phrase_list.append(line.strip())
+   line = f_words.readline()
+f_words.close()
+ 
 phrase_str = phrase_list[random.randint(0, len(phrase_list) - 1)]
 
 # turns phrase_str into a list
